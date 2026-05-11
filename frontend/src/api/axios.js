@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://swapnsave-backend-natz.onrender.com",
+  baseURL: "https://swapnsave-backend-natz.onrender.com/api",
 });
 
 // Automatically attach JWT token to every request
