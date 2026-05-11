@@ -1,0 +1,32 @@
+/* home */
+
+.cta-btn {
+  background: #ff7f50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.cta-btn:hover {
+  transform: scale(1.05);
+  background: #ff5722;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+}
