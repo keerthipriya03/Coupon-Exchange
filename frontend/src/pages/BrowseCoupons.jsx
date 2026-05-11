@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api/axios";
 
-const BACKEND = "http://localhost:5000";
+const BACKEND = "https://swapnsave-backend-natz.onrender.com";
 const CATEGORIES = ["All", "Movie", "Travel", "Event", "Food", "Other"];
 
 function BrowseCoupons() {
