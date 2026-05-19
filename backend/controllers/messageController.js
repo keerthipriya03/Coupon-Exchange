@@ -1,8 +1,7 @@
 import Message from "../models/Message.js";
 import User from "../models/User.js";
 
-// ─── GET /api/messages/conversations ─────────────────────────────────────────
-// Returns list of unique users this user has chatted with (for left panel)
+// ─── GET /api/messages/conversations 
 export const getConversations = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -39,7 +38,7 @@ export const getConversations = async (req, res) => {
   }
 };
 
-// ─── GET /api/messages/:userId ────────────────────────────────────────────────
+// ─── GET /api/messages/:userId
 // Get full chat between logged-in user and another user
 export const getMessages = async (req, res) => {
   try {
@@ -67,7 +66,7 @@ export const getMessages = async (req, res) => {
   }
 };
 
-// ─── POST /api/messages/:userId ───────────────────────────────────────────────
+// ─── POST /api/messages/:userId 
 // Send a message to another user
 export const sendMessage = async (req, res) => {
   try {
