@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import { generateToken } from "../utils/jwt.js";
 
-// ─── POST /api/auth/signup ────────────────────────────────────────────────────
+// ─── POST /api/auth/signup
 export const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -27,7 +27,7 @@ export const signup = async (req, res) => {
   }
 };
 
-// ─── POST /api/auth/login ─────────────────────────────────────────────────────
+// ─── POST /api/auth/login 
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -52,7 +52,7 @@ export const login = async (req, res) => {
   }
 };
 
-// ─── GET /api/auth/me ─────────────────────────────────────────────────────────
+// ─── GET /api/auth/me 
 export const getMe = async (req, res) => {
   try {
     res.json({ success: true, user: req.user });
@@ -61,7 +61,7 @@ export const getMe = async (req, res) => {
   }
 };
 
-// ─── PUT /api/auth/profile ────────────────────────────────────────────────────
+// ─── PUT /api/auth/profile 
 export const updateProfile = async (req, res) => {
   try {
     const { name } = req.body;
