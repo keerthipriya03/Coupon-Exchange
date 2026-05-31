@@ -16,32 +16,28 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ── Middleware ────────────────────────────────────────────────────────────────
-// app.use(cors({
-//   origin: process.env.CLIENT_URL || "http://localhost:5173",
-//   credentials: true,
-// }));
+
 app.use(cors({
-  origin: "*",  // allow all origins (fixes it immediately)
+  origin: "*",  
   credentials: true,
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve uploaded images statically
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// ── Routes ────────────────────────────────────────────────────────────────────
+// Routes 
 app.use("/api/auth",     authRoutes);
 app.use("/api/coupons",  couponRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Health check
+
 app.get("/api/health", (_req, res) =>
   res.json({ success: true, message: "SwapnSave server is running 🚀" })
 );
 
-// ── Global Error Handler ──────────────────────────────────────────────────────
+// Global Error Handler 
 app.use((err, _req, res, _next) => {
   const status = err.statusCode || 500;
   res.status(status).json({
