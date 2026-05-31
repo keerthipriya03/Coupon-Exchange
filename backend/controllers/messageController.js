@@ -1,7 +1,7 @@
 import Message from "../models/Message.js";
 import User from "../models/User.js";
 
-// ─── GET /api/messages/conversations 
+// GET  
 export const getConversations = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -13,7 +13,7 @@ export const getConversations = async (req, res) => {
       .populate("receiver", "name avatar")
       .sort({ createdAt: -1 });
 
-    // Build unique conversation list
+    
     const seen = new Set();
     const conversations = [];
 
@@ -38,8 +38,7 @@ export const getConversations = async (req, res) => {
   }
 };
 
-// ─── GET /api/messages/:userId
-// Get full chat between logged-in user and another user
+
 export const getMessages = async (req, res) => {
   try {
     const myId = req.user._id;
@@ -67,7 +66,7 @@ export const getMessages = async (req, res) => {
 };
 
 // ─── POST /api/messages/:userId 
-// Send a message to another user
+
 export const sendMessage = async (req, res) => {
   try {
     const { text, couponId } = req.body;
