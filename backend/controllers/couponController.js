@@ -1,6 +1,6 @@
 import Coupon from "../models/Coupon.js";
 
-// ─── GET /api/coupons
+// GET 
 export const getCoupons = async (req, res) => {
   try {
     const { category, search, page = 1, limit = 12 } = req.query;
@@ -32,7 +32,7 @@ export const getCoupons = async (req, res) => {
   }
 };
 
-// ─── GET /api/coupons/:id 
+// GET 
 export const getCouponById = async (req, res) => {
   try {
     const coupon = await Coupon.findById(req.params.id).populate("seller", "name email avatar");
@@ -43,7 +43,7 @@ export const getCouponById = async (req, res) => {
   }
 };
 
-// ─── POST /api/coupons
+// POST 
 export const createCoupon = async (req, res) => {
   try {
     const { title, category, description, price, expiry } = req.body;
@@ -70,7 +70,7 @@ export const createCoupon = async (req, res) => {
   }
 };
 
-// ─── PUT /api/coupons/:id 
+// PUT 
 export const updateCoupon = async (req, res) => {
   try {
     const coupon = await Coupon.findById(req.params.id);
@@ -89,7 +89,7 @@ export const updateCoupon = async (req, res) => {
   }
 };
 
-// ─── DELETE /api/coupons/:id 
+// DELETE 
 export const deleteCoupon = async (req, res) => {
   try {
     const coupon = await Coupon.findById(req.params.id);
@@ -105,7 +105,7 @@ export const deleteCoupon = async (req, res) => {
   }
 };
 
-// ─── GET /api/coupons/my/listings 
+// GET 
 export const getMyCoupons = async (req, res) => {
   try {
     const coupons = await Coupon.find({ seller: req.user._id }).sort({ createdAt: -1 });
