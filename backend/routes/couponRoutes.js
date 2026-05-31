@@ -12,11 +12,11 @@ import upload from "../middleware/uploadMiddleware.js";
 
 const router = express.Router();
 
-router.get("/",              getCoupons);                                           // GET  /api/coupons          (BrowseCoupons page)
-router.get("/my/listings",   protect, getMyCoupons);                                // GET  /api/coupons/my/listings (Profile page)
-router.get("/:id",           getCouponById);                                        // GET  /api/coupons/:id
-router.post("/",             protect, upload.single("image"), createCoupon);        // POST /api/coupons          (AddListing page)
-router.put("/:id",           protect, upload.single("image"), updateCoupon);        // PUT  /api/coupons/:id
-router.delete("/:id",        protect, deleteCoupon);                                // DELETE /api/coupons/:id
+router.get("/",              getCoupons);                                           
+router.get("/my/listings",   protect, getMyCoupons);                                
+router.get("/:id",           getCouponById);                                        
+router.post("/",             protect, upload.single("image"), createCoupon);        
+router.put("/:id",           protect, upload.single("image"), updateCoupon);        
+router.delete("/:id",        protect, deleteCoupon);                                
 
 export default router;
