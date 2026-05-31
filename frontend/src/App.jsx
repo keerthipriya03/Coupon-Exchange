@@ -32,32 +32,3 @@ export default App;
 
 
 
-
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import Hero from "./components/Hero";
-// import Listings from "./pages/Listings";
-// import CreateListing from "./pages/CreateListing";
-// import Profile from "./pages/Profile";
-// import Chat from "./pages/Chat";
-// import Footer from "./components/Footer";
-// import "./styles.css";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <Routes>
-//         <Route path="/" element={<Hero />} />
-//         <Route path="/listings" element={<Listings />} />
-//         <Route path="/create" element={<CreateListing />} />
-//         <Route path="/profile" element={<Profile />} />
-//         <Route path="/chat" element={<Chat />} />
-//       </Routes>
-//       <Footer />
-//     </Router>
-//   );
-// }
-
-// export default App;
