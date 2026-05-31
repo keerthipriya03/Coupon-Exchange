@@ -15,7 +15,7 @@ const messageSchema = new mongoose.Schema(
     coupon: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Coupon",
-      default: null, // optional: chat about a specific listing
+      default: null, 
     },
     text: {
       type: String,
